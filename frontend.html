@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Assistant — Automatiziraj poslovnu poštu</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --muted: #94a3b8; --accent: #22d3ee; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.2s; border: none; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--muted); }
+        .btn-ghost:hover { border-color: var(--primary); }
+        section { padding: 80px 0; }
+        .section-title { font-size: 2rem; text-align: center; margin-bottom: 12px; }
+        .section-sub { text-align: center; color: var(--muted); margin-bottom: 50px; font-size: 1.1rem; }
+        .grid { display: grid; gap: 24px; }
+        @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 639px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } section { padding: 50px 0; } }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-weight: 800; font-size: 1.3rem; color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+        .hero { padding: 100px 0 60px; text-align: center; background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 16px; line-height: 1.1; }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--muted); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .card { background: var(--card); border: 1px solid #334155; border-radius: 12px; padding: 28px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-4px); }
+        .card h3 { margin-bottom: 10px; font-size: 1.15rem; }
+        .card p { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+        .icon { font-size: 2rem; margin-bottom: 14px; display: inline-block; }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo">AI<span style="color:var(--accent)">Email</span>Assistant</div>
+    <div class="nav-links">
+        <a href="#how">Kako radi</a>
+        <a href="#features">Značajke</a>
+        <a href="#try">Pokušaj</a>
+    </div>
+</nav>
+<section class="hero">
+    <div class="container">
+        <h1>Automatiziraj poslovnu<br>e-poštu sa AI-om</h1>
+        <p>AI agent koji automatski klasifikira poruke, izvuče ključne podatke (ime, telefon, broj narudžbe) i napiše pripremljeni odgovor — bez ručnog kucaća.</p>
+        <div class="hero-actions">
+            <a href="#try" class="btn btn-primary">Pokušaj besplatno</a>
+            <a href="#how" class="btn btn-ghost">Kako radi</a>
+        </div>
+    </div>
+</section>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Assistant — Recello</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; color: white; }
+        header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        header p { opacity: 0.9; font-size: 1rem; }
+        .card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 0.95rem; }
+        input[type="text"], textarea { width: 100%; padding: 12px 16px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 1rem; transition: border 0.2s; }
+        input[type="text"]:focus, textarea:focus { outline: none; border-color: #667eea; }
+        textarea { min-height: 140px; resize: vertical; font-family: inherit; }
+        button.btn-submit { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 14px 28px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        button.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102,126,234,0.4); }
+        button.btn-submit:active { transform: translateY(0); }
+        button.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI Email Assistant</h1>
+        <p>Automatizirana klasifikacija poslovnih e-poruka • Recello AI</p>
+    </header>
+    <div class="card">
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="subject">Predmet poruke</label>
+                <input type="text" id="subject" placeholder="npr. Pitanje vezano za parkiranje" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Tijelo poruke</label>
+                <textarea id="body" placeholder="npr. Zdravo, ja sam Marko Perić, telefon 061 123 456. Hoću rezervisati parking mesto zajutrom..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sender">Pošiljatelj (email)</label>
+                <input type="text" id="sender" placeholder="npr. marko@example.com">
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">Procesiraj poruku</button>
+        </form>
+
+        <div id="loading" class="loading"><div class="spinner"></div><div>AI analizira poruku...</div></div>
+        <div id="error" class="error-box"></div>
+
+        <div id="results" class="results">
+            <div class="result-header">
+                <div>
+                    <h2 style="margin-bottom:4px; color:#333;">Rezultat analize</h2>
+                    <div class="reasoning" id="reasoning"></div>
+                </div>
+                <span class="badge" id="categoryBadge">—</span>
+            </div>
+            <div class="confidence" id="confidenceRow"><strong>Povjerenje (confidence):</strong> <span id="confidenceValue">—</span></div>
+            <div class="entities-grid" id="entitiesGrid"></div>
+            <div class="draft-box"><h3>AI predloženi odgovor</h3><div class="draft-text" id="draftText">—</div></div>
+        </div>
+    </div>
+</div>
+<style>
+        .results { margin-top: 30px; display: none; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #f0f2f5; }
+        .badge { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge.inquiry { background: #e3f2fd; color: #1565c0; }
+        .badge.complaint { background: #ffebee; color: #c62828; }
+        .badge.order { background: #e8f5e9; color: #2e7d32; }
+        .badge.support { background: #fff3e0; color: #ef6c00; }
+        .badge.invoice { background: #f3e5f5; color: #7b1fa2; }
+        .badge.spam { background: #eceff1; color: #546e7a; }
+        .confidence { font-size: 0.9rem; color: #666; }
+        .confidence strong { color: #333; }
+        .entities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+        .entity-card { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 12px 16px; }
+        .entity-card .label { font-size: 0.75rem; text-transform: uppercase; color: #888; letter-spacing: 0.5px; margin-bottom: 4px; display: block; }
+        .entity-card .value { font-weight: 600; color: #333; word-break: break-word; }
+        .entity-card .value.empty { color: #aaa; font-style: italic; }
+        .draft-box { background: #fff; border: 2px dashed #667eea; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+        .draft-box h3 { margin-bottom: 10px; color: #555; font-size: 1rem; }
+        .draft-text { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 14px; font-family: inherit; font-size: 0.95rem; white-space: pre-wrap; }
+        .reasoning { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 15px; }
+        .error-box { background: #fee2e2; color: #991b1b; padding: 14px; border-radius: 8px; margin-bottom: 20px; display: none; }
+        .loading { text-align: center; padding: 20px; color: #667eea; font-weight: 600; display: none; }
+        .spinner { width: 24px; height: 24px; border: 3px solid #e3e7fd; border-top-color: #667eea; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 10px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @media (max-width: 600px) { body { padding: 12px; } .card { padding: 20px 16px; } header h1 { font-size: 1.6rem; } .result-header { flex-direction: column; gap: 10px; align-items: flex-start; } }
+    </style>
+    <script>
+        const form = document.getElementById('emailForm');
+        const results = document.getElementById('results');
+        const loading = document.getElementById('loading');
+        const errorBox = document.getElementById('error');
+        const submitBtn = document.getElementById('submitBtn');
+        const categoryBadge = document.getElementById('categoryBadge');
+        const confidenceValue = document.getElementById('confidenceValue');
+        const reasoningEl = document.getElementById('reasoning');
+        const entitiesGrid = document.getElementById('entitiesGrid');
+        const draftText = document.getElementById('draftText');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const subject = document.getElementById('subject').value.trim();
+            const body = document.getElementById('body').value.trim();
+            const sender = document.getElementById('sender').value.trim();
+            if (!subject || !body) { showError('Molimo unesite predmet i tijelo poruke.'); return; }
+            hideError();
+            results.style.display = 'none';
+            loading.style.display = 'block';
+            submitBtn.disabled = true;
+            try {
+                const response = await fetch('http://localhost:8000/process-email', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ subject, body, sender })
+                });
+                if (!response.ok) throw new Error('Greška na serveru: ' + response.status);
+                const data = await response.json();
+                renderResults(data);
+            } catch (err) {
+                showError(err.message || 'Neuspješno povezivanje sa serverom. Provjeri da li radi python main.py na portu 8000.');
+            } finally {
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+        function renderResults(data) {
+            const category = data.category || 'inquiry';
+            const confidence = Math.round((data.confidence || 0) * 100);
+            const entities = data.entities || {};
+            const draft = data.draft_response || 'Nema predloženog odgovora.';
+            const reasoning = data.reasoning || '';
+            categoryBadge.textContent = category.toUpperCase();
+            categoryBadge.className = 'badge ' + category;
+            confidenceValue.textContent = confidence + '%';
+            reasoningEl.textContent = reasoning ? 'Razlog: ' + reasoning : '';
+            entitiesGrid.innerHTML = '';
+            const fields = [
+                { key: 'customer_name', label: 'Ime klijenta' },
+                { key: 'phone', label: 'Telefon' },
+                { key: 'email', label: 'Email' },
+                { key: 'order_number', label: 'Broj narudžbe' },
+                { key: 'date', label: 'Datum' },
+                { key: 'amount', label: 'Iznos' },
+                { key: 'urgency', label: 'Hitnost' }
+            ];
+            fields.forEach(f => {
+                const val = entities[f.key];
+                const card = document.createElement('div');
+                card.className = 'entity-card';
+                card.innerHTML = '<span class="label">' + f.label + '</span><span class="value ' + (!val ? 'empty' : '') + '">' + (val || '—') + '</span>';
+                entitiesGrid.appendChild(card);
+            });
+            draftText.textContent = draft;
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
+        function showError(msg) { errorBox.textContent = msg; errorBox.style.display = 'block'; }
+        function hideError() { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+    </script>
+</body>
+</html>
+<section id="features" class="section-features">
+    <div class="container">
+        <h2 class="section-title">Šta radi ovaj AI agent</h2>
+        <p class="section-sub">Dizajnirano za kompanije koje primaju desтки poslovne e-poruke dnevno.</p>
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>Automatska klasifikacija</h3>
+                <p>Poruka se automatski razvrstava: upit, žalba, narudžba, podrška, faktura ili spam.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📇</div>
+                <h3>Izvlaćenje podataka</h3>
+                <p>AI sam izvuče ime klijenta, telefon, broj narudžbe, datum i hitnost iz teksta poruke.</p>
+            </div>
+            <div class="card">
+                <div class="icon">✉️</div>
+                <h3>Pripremljeni odgovor</h3>
+                <p>AI generiše draft odgovor koji možete odobriti i poslati jednim klikom.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how">
+    <div class="container">
+        <h2 class="section-title">Kako radi u 3 koraka</h2>
+        <p class="section-sub">Od poruke do odgovora bez ručnog unosa podataka.</p>
+        <div class="grid grid-3">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                    <h4>Unesite poruku</h4>
+                    <p>Kopirajte predmet i tijelo poslovne e-poruke u obrazac.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                    <h4>AI analizira</h4>
+                    <p>Model klasifikuje kategoriju i izvuče ključne entitete: ime, telefon, broj narudžbe, datum, iznos, hitnost.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                    <h4>Dobijate odgovor</h4>
+                    <p>AI napiše pripremljeni odgovor koji možete poslati klijentu jednim klikom.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="try" class="section-try">
+    <div class="container">
+        <h2 class="section-title">Pokušaj sada</h2>
+        <p class="section-sub">Unesite poslovnu e-poruku i pogledajte kako AI radi.</p>
+        <div class="form-wrap">
+            <div class="form-title">Procesiraj e-poruku</div>
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="subject">Predmet poruke</label>
+                    <input type="text" id="subject" placeholder="npr. Pitanje vezano za parkiranje" required>
+                </div>
+                <div class="form-group">
+                    <label for="body">Tijelo poruke</label>
+                    <textarea id="body" placeholder="npr. Zdravo, ja sam Marko Perić, telefon 061 123 456. Hoću rezervisati parking mesto zajutrom..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="sender">Pošiljatelj (email)</label>
+                    <input type="text" id="sender" placeholder="npr. marko@example.com">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Procesiraj poruku</button>
+            </form>
+
+            <div id="loading" class="loading"><div>AI analizira poruku...</div></div>
+            <div id="error" class="error"></div>
+
+            <div id="results" class="results">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:15px; border-bottom:1px solid #334155;">
+                    <div>
+                        <h2 style="margin-bottom:4px; color:#333;">Rezultat analize</h2>
+                        <div class="reasoning" id="reasoning" style="font-size:0.85rem; color:var(--muted); font-style:italic;"></div>
+                    </div>
+                    <span class="badge" id="categoryBadge">—</span>
+                </div>
+                <div class="confidence" style="font-size:0.9rem; color:#666; margin-bottom:10px;"><strong>Povjerenje (confidence):</strong> <span id="confidenceValue">—</span></div>
+                <div class="entity-row" id="entitiesGrid"></div>
+                <div class="draft-box">
+                    <span class="lbl">AI predloženi odgovor</span>
+                    <div class="draft-text" id="draftText">—</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>AI Email Assistant &bull; Recello AI &bull; Automatizacija poslovne komunikacije</p>
+    </div>
+</footer>
+<script>
+    const form = document.getElementById('emailForm');
+    const results = document.getElementById('results');
+    const loading = document.getElementById('loading');
+    const errorBox = document.getElementById('error');
+    const submitBtn = document.getElementById('submitBtn');
+    const categoryBadge = document.getElementById('categoryBadge');
+    const confidenceValue = document.getElementById('confidenceValue');
+    const reasoningEl = document.getElementById('reasoning');
+    const entitiesGrid = document.getElementById('entitiesGrid');
+    const draftText = document.getElementById('draftText');
+
+    // PROMJENI OVO NA SVOJ RENDER URL NAKON DEPLOYMENTA:
+    const API_BASE_URL = 'http://localhost:8000';
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const subject = document.getElementById('subject').value.trim();
+        const body = document.getElementById('body').value.trim();
+        const sender = document.getElementById('sender').value.trim();
+        if (!subject || !body) { showError('Molimo unesite predmet i tijelo poruke.'); return; }
+        hideError();
+        results.style.display = 'none';
+        loading.style.display = 'block';
+        submitBtn.disabled = true;
+        try {
+            const response = await fetch(`${API_BASE_URL}/process-email`, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ subject, body, sender })
+            });
+            if (!response.ok) throw new Error('Greška na serveru: ' + response.status);
+            const data = await response.json();
+            renderResults(data);
+        } catch (err) {
+            showError(err.message || 'Neuspješno povezivanje sa serverom. Provjeri da li radi python main.py na portu 8000.');
+        } finally {
+            loading.style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    });
+
+    function renderResults(data) {
+        const category = data.category || 'inquiry';
+        const confidence = Math.round((data.confidence || 0) * 100);
+        const entities = data.entities || {};
+        const draft = data.draft_response || 'Nema predloženog odgovora.';
+        const reasoning = data.reasoning || '';
+        categoryBadge.textContent = category.toUpperCase();
+        categoryBadge.className = 'badge ' + category;
+        confidenceValue.textContent = confidence + '%';
+        reasoningEl.textContent = reasoning ? 'Razlog: ' + reasoning : '';
+        entitiesGrid.innerHTML = '';
+        const fields = [
+            { key: 'customer_name', label: 'Ime klijenta' },
+            { key: 'phone', label: 'Telefon' },
+            { key: 'email', label: 'Email' },
+            { key: 'order_number', label: 'Broj narudžbe' },
+            { key: 'date', label: 'Datum' },
+            { key: 'amount', label: 'Iznos' },
+            { key: 'urgency', label: 'Hitnost' }
+        ];
+        fields.forEach(f => {
+            const val = entities[f.key];
+            const card = document.createElement('div');
+            card.className = 'entity-item';
+            card.innerHTML = '<div class="lbl">' + f.label + '</div><div class="val ' + (!val ? 'empty' : '') + '">' + (val || '—') + '</div>';
+            entitiesGrid.appendChild(card);
+        });
+        draftText.textContent = draft;
+        results.style.display = 'block';
+        results.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showError(msg) { errorBox.textContent = msg; errorBox.style.display = 'block'; }
+    function hideError() { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+</script>
+</body>
+</html>
